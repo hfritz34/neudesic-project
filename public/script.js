@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   function displayResults(data) {
     const resultsDiv = document.getElementById('results');
-    resultsDiv.innerHTML = ''; 
+    resultsDiv.innerHTML = '<h2>Results</h2>'; 
   
     const table = document.createElement('table');
     table.className = 'results-table';
@@ -48,7 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsDiv.appendChild(table);
     
     const summaryDiv = document.getElementById('summary');
-  summaryDiv.innerHTML = `
+    summaryDiv.innerHTML='<h2>Summary</h2>';
+
+    const table2 = document.createElement('table');
+    table2.className = 'summary-table';
+  
+    table2.innerHTML = `
   <table class="summary-table">
   <tr>
     <th>Total of ${data.amortizationSchedule.length} monthly payments</th>
@@ -60,5 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </tr>
 </table>
 `;
+summaryDiv.appendChild(table2);
+
   }
   

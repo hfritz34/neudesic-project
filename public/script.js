@@ -44,5 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <td>${data.monthlyPayment.toFixed(2)}</td>`;
         });
     resultsDiv.appendChild(table);
+    
+    const summaryDiv = document.getElementById('summary');
+  summaryDiv.innerHTML = `
+    <p>Total of ${data.amortizationSchedule.length} monthly payments: $${data.totalPayment.toFixed(2)}</p>
+    <p>Total interest: $${data.totalInterest.toFixed(2)}</p>
+  `;
   }
   

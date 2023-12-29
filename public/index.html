@@ -8,6 +8,14 @@
 </head>
 <body>
     <h1>Loan Amortization Calculator</h1>
+    <form id="loan-form">
+        <input type="number"  name="principal" placeholder="Loan Amount" required>
+        <input type="number" name="loanTerm" placeholder="Loan Term (months)" required>
+        <input type="number" name="interestRate" placeholder="Interest Rate" step="0.01" required>
+
+        <button type="submit">Calculate</button>
+    </form>
+
  
     <div id="results"></div>
 

@@ -47,8 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const summaryDiv = document.getElementById('summary');
   summaryDiv.innerHTML = `
-    <p>Total of ${data.amortizationSchedule.length} monthly payments: $${data.totalPayment.toFixed(2)}</p>
-    <p>Total interest: $${data.totalInterest.toFixed(2)}</p>
-  `;
+  <table class="summary-table">
+  <tr>
+    <th>Total of ${data.amortizationSchedule.length} monthly payments</th>
+    <td>$${data.totalPayment.toFixed(2)}</td>
+  </tr>
+  <tr>
+    <th>Total interest</th>
+    <td>$${data.totalInterest.toFixed(2)}</td>
+  </tr>
+</table>
+`;
   }
   

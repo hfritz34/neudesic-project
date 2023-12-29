@@ -26,11 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
   
     const table = document.createElement('table');
   
-    table.innerHTML = '<tr><th>Month</th><th>Principal Payment</th><th>Interest Payment</th><th>Total Interest</th><th>Balance</th></tr>';
-    data.amortizationSchedule.forEach(item => {
+    table.innerHTML = `
+    <tr>
+      <th>Month</th>
+      <th>Principal Amount Remaining</th>
+      <th>Interest Amount Paid</th>
+      <th>Principal Amount Paid</th>
+      <th>Total Monthly Payment</th>
+    </tr>`;
+        data.amortizationSchedule.forEach(item => {
       const row = table.insertRow();
-      row.innerHTML = `<td>${item.month}</td><td>${item.principalPayment.toFixed(2)}</td><td>${item.interestPayment.toFixed(2)}</td><td>${item.totalInterest.toFixed(2)}</td><td>${item.balance.toFixed(2)}</td>`;
-    });
+      row.innerHTML = `
+      <td>${item.month}</td>
+      <td>${item.balance.toFixed(2)}</td>
+      <td>${item.interestPayment.toFixed(2)}</td>
+      <td>${item.principalPayment.toFixed(2)}</td>
+      <td>${data.monthlyPayment.toFixed(2)}</td>`;
+        });
     resultsDiv.appendChild(table);
   }
   

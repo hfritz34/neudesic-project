@@ -25,6 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
     resultsDiv.innerHTML = ''; 
   
     const table = document.createElement('table');
+    table.className = 'results-table';
+
   
     table.innerHTML = `
     <tr>

@@ -16,39 +16,30 @@ body {
     box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
   }
 
-  #results {
-    max-width: 600px;
-    margin: 20px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  table {
+  .results-table, .summary-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
   }
-
-  table, th, td {
+  
+  .results-table th, .summary-table th,
+  .results-table td, .summary-table td {
     border: 1px solid #ddd;
-  }
-
-  th, td {
-    text-align: left;
     padding: 8px;
+    text-align: left;
   }
-
-  th {
+  
+  .results-table th, .summary-table th {
     background-color: #4CAF50;
     color: white;
   }
-
-  td {
+  
+  .results-table td, .summary-table td {
     background-color: #f2f2f2;
   }
-
-  tr:nth-child(even) {
+  
+  .results-table tr:nth-child(even),
+  .summary-table tr:nth-child(even) {
     background-color: #ffffff;
   }
 
@@ -81,15 +72,16 @@ body {
     max-width: 1200px; 
   }
 
-  #results {
-    flex: 3; 
-  }
-
-  #summary {
+  #results, #summary {
     flex: 1; 
-    margin-left: 20px; 
+    margin-left: 20px;
     padding: 10px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   }
+  #results {
+    max-width: none;
+  }
+  
+  

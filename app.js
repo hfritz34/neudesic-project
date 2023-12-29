@@ -10,17 +10,17 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html'); 
 });
 
+app.post('/calculate', (req, res) => {
+  const { principal, interestRate, loanTerm } = req.body;
+  const results = calculateAmortization(principal, interestRate, loanTerm);
+  res.json(results);
+});
+
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
 
-const testPrincipal = 100000; 
-const testAnnualRate = 11.54; 
-const testTermMonths = 12;
 
-const testResults = calculateAmortization(testPrincipal, testAnnualRate, testTermMonths);
-
-console.log(testResults);
 
 function calculateAmortization(principal, annualRate, termMonths) {
   const monthlyRate = annualRate / 12 / 100;

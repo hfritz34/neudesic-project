@@ -68,3 +68,28 @@ body {
   button:hover {
     background-color: #45a049;
   }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .results-summary {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; 
+  }
+
+  #results {
+    flex: 3; 
+  }
+
+  #summary {
+    flex: 1; 
+    margin-left: 20px; 
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }

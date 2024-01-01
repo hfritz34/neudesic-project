@@ -9,17 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
       fetch('/calculate', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json', //telling fetch we are passing json
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data), //cant just send js object, stringify to string
       })
       .then(response => response.json())
       .then(data => {
         displayResults(data);
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => console.error('Error:', error)); //only catches fetch errors 
     });
   });
+  
+  
   function displayResults(data) {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '<h2>Results</h2>'; 
@@ -40,10 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const row = table.insertRow();
       row.innerHTML = `
       <td>${item.month}</td>
-      <td>${item.balance.toFixed(2)}</td>
-      <td>${item.interestPayment.toFixed(2)}</td>
-      <td>${item.principalPayment.toFixed(2)}</td>
-      <td>${data.monthlyPayment.toFixed(2)}</td>`;
+      <td>$${item.balance.toFixed(2)}</td>
+      <td>$${item.interestPayment.toFixed(2)}</td>
+      <td>$${item.principalPayment.toFixed(2)}</td>
+      <td>$${data.monthlyPayment.toFixed(2)}</td>`;
         });
     resultsDiv.appendChild(table);
     

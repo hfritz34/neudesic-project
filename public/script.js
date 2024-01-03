@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('loan-form');
     form.addEventListener('submit', function(event) {
@@ -13,7 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify(data), //cant just send js object, stringify to string
       })
-      .then(response => response.json())
+      .then(response => {
+        if(!response.ok ) throw new Error('was not a valid response');
+        return response.json();
+      })
       .then(data => {
         displayResults(data);
       })

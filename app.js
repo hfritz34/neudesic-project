@@ -30,7 +30,6 @@ function calculateAmortization(principal, annualRate, termMonths) {
   const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, termMonths)) / (Math.pow(1 + monthlyRate, termMonths) - 1); //loan formula
 
 
-
   let balance = principal;
   let totalInterest = 0;
   let amortizationSchedule = [];
